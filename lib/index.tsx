@@ -29,13 +29,6 @@ class Stripe {
     this._stripeInitialized = true;
   };
 
-  setStripeAccount = (stripeAccount: string) =>
-    StripePayments.setStripeAccount(stripeAccount);
-
-  createTokenWithCard = (params = {}) => {
-    return StripePayments.createTokenWithCard(params);
-  };
-
   confirmPayment(
     clientSecret: string,
     cardDetails: CardDetails
@@ -45,6 +38,14 @@ class Stripe {
 
   isCardValid(cardDetails: CardDetails): boolean {
     return StripePayments.isCardValid(cardDetails) == true;
+  }
+
+  setStripeAccount(stripeAccount: string) {
+    StripePayments.setStripeAccount(stripeAccount);
+  }
+
+  createTokenWithCard(params = {}) {
+    return StripePayments.createTokenWithCard(params);
   }
 }
 
