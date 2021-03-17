@@ -32,6 +32,10 @@ class Stripe {
   setStripeAccount = (stripeAccount: string) =>
     StripePayments.setStripeAccount(stripeAccount);
 
+  createTokenWithCard = (params = {}) => {
+    return StripePayments.createTokenWithCard(params);
+  };
+
   confirmPayment(
     clientSecret: string,
     cardDetails: CardDetails
